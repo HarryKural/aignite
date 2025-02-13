@@ -10,7 +10,7 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <>
-      <div className="custom-gradient text-white">
+      <div className="custom-gradient">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
