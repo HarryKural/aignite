@@ -39,7 +39,7 @@ function Home() {
             <img src={heroImage} alt="ChatBot" className="w-full max-w-md md:max-w-lg rounded-lg shadow-lg" />
             <h2 className="mt-4 text-3xl">Ready for expert advice?</h2>
             <p className="mt-2">Start your AI consultation today.</p>
-            <button className="flex items-center space-x-2 mt-6 bg-[#205AFA] text-2xl font-semibold px-6 py-3 rounded-full hover:bg-[#1D4ED8] transition-colors duration-200 ease-in-out">
+            <button className="btn-primary flex items-center space-x-2 mt-6 text-2xl font-semibold px-6 py-3 rounded-full transition-colors duration-200 ease-in-out">
                 <span>Get Started</span>
                 <ChevronDoubleRightIcon className="w-6 h-6" />
             </button>

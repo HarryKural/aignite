@@ -9,3 +9,11 @@ html, body {
   background: linear-gradient(to bottom, #000120 0%, #000353 70%, #00046C 88%, #000579 100%);
   min-height: 100vh;
 }
+
+.btn-primary {
+  background-color: #205AFA;
+  }
+  
+.btn-primary:hover {
+    background-color: #1D4ED8;
+}
