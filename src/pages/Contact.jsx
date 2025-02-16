@@ -1,4 +1,4 @@
-import { PaperAirplaneIcon } from '@heroicons/react/24/solid'
+import { UserIcon, EnvelopeIcon, ChatBubbleBottomCenterIcon, PaperAirplaneIcon } from '@heroicons/react/24/solid'
 
 function Contact() {
     return (
@@ -13,15 +13,23 @@ function Contact() {
 
             <div className="mt-10">
               <label htmlFor="name" className="text-xl font-semibold">Name</label>
-              <input type="text" placeholder="Name" autoComplete="name" required className="mt-2 w-full p-3 border border-gray-300 rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#205AFA]" />
+              <div className="relative mt-2">
+                <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500" />
+                <input type="text" placeholder="Name" autoComplete="name" required className="w-full p-3 pl-10 border border-gray-300 rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#205AFA]" />
+              </div>
             </div>
             <div className="mt-6">
               <label htmlFor="email" className="text-xl font-semibold">Email</label>
-              <input type="email" placeholder="Email" autoComplete="email" required className="mt-2 w-full p-3 border border-gray-300 rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#205AFA]" />
+              <div className="relative mt-2">
+                <EnvelopeIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-500" />
+                <input type="email" placeholder="Email" autoComplete="email" required className="w-full p-3 pl-10 border border-gray-300 rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#205AFA]" />
+              </div>
             </div>
             <div className="mt-6">
               <label htmlFor="message" className="text-xl font-semibold">Message</label>
-              <textarea name="message" id="message" placeholder="Message" required rows="4" class="mt-2 w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#205AFA]"></textarea>
+              <div className="relative mt-2">
+                <textarea name="message" id="message" placeholder="Your message..." required rows="4" class="w-full resize-none rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#205AFA]"></textarea>
+              </div>
             </div>
             <button className="btn-primary flex items-center space-x-2 mt-6 text-lg font-semibold px-6 py-3 rounded-full transition-colors duration-200 ease-in-out">
                 <span>Submit</span>
