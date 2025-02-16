@@ -1,7 +1,16 @@
 import heroImage from '../assets/images/hero-image-robo.jpeg';
+import { useNavigate } from 'react-router-dom';
 import { ChevronDoubleRightIcon } from '@heroicons/react/24/solid'
 
 function Home() {
+  /* state variable */
+  const navigate = useNavigate();
+
+  /* function to handle CTA button */
+  const handleCTAButton = () => {
+    navigate("/booking");  // navigate to booking page
+  };
+
   return (
     <>
       <title>AIgnite</title>
@@ -39,7 +48,8 @@ function Home() {
             <img src={heroImage} alt="ChatBot" className="w-full max-w-md md:max-w-lg rounded-lg shadow-lg" />
             <h2 className="mt-4 text-3xl">Ready for expert advice?</h2>
             <p className="mt-2">Start your AI consultation today.</p>
-            <button className="btn-primary flex items-center space-x-2 mt-6 text-2xl font-semibold px-6 py-3 rounded-full transition-colors duration-200 ease-in-out">
+            <button onClick={handleCTAButton}
+                    className="btn-primary flex items-center space-x-2 mt-6 text-2xl font-semibold px-6 py-3 rounded-full transition-colors duration-200 ease-in-out">
                 <span>Get Started</span>
                 <ChevronDoubleRightIcon className="w-6 h-6" />
             </button>

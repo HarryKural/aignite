@@ -7,7 +7,7 @@ const Navbar = () => {
         <Link to="/" className="text-xl font-bold">
           <h1 className="text-3xl">AIgnite</h1>
         </Link>
-        <div className="space-x-15">
+        <div className="text-xl space-x-15">
           <Link to="/about" className="hover:text-gray-400">About</Link>
           <Link to="/booking" className="hover:text-gray-400">Booking</Link>
           <Link to="/contact" className="hover:text-gray-400">Contact</Link>

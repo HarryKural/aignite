@@ -4,11 +4,21 @@ import "react-datepicker/dist/react-datepicker.css";
 import { CalendarIcon, ClockIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
 
 function Booking() {
+    /* state variables */
     const [selectedService, setSelectedService] = useState("");
     const [bookingDate, setBookingDate] = useState(null);
     const [startTime, setStartTime] = useState(null);
     const [endTime, setEndTime] = useState(null);
     const [email, setEmail] = useState("");
+
+    /* function to reset form */
+    const handleReset = () => {
+      setSelectedService("");
+      setBookingDate(null);
+      setStartTime(null);
+      setEndTime(null);
+      setEmail("");
+    };
 
     return (
       <section className="flex items-center justify-center px-6 mt-15">
@@ -87,6 +97,25 @@ function Booking() {
                 className="w-full border border-gray-300 rounded-lg p-3 pl-10 focus:outline-none focus:ring-2 focus:ring-[#205AFA]"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)} />
+            </div>
+
+            {/* buttons */}
+            <div className="flex gap-4">
+              <div className="relative w-1/2">
+                <button className="w-full bg-[#205AFA] text-white text-lg font-semibold py-3 rounded-lg hover:bg-[#1D4ED8] transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]">
+                  Book Now
+                </button>
+              </div>
+              <div className="relative w-1/2">
+                <button className="w-full bg-[#DC2626] text-white text-lg font-semibold py-3 rounded-lg hover:bg-[#A70000] transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#A70000]"
+                        onClick={handleReset}>
+                  Reset
+                </button>
+              </div>
+            </div>
+
+            <div className="relative text-center mt-6">
+              <p className="italic">flat price $1.99 per minute</p>
             </div>
 
           </form>
