@@ -12,12 +12,21 @@ function Login() {
         {/* Toggle Buttons */}
         <div className="flex justify-center mb-6 space-x-4">
           <button 
-            className={`px-6 py-2 rounded-md text-lg font-semibold transition-colors focus:outline-none ${!isSignUp ? 'bg-[#205AFA] text-white' : 'text-gray-500 hover:text-[#205AFA]'}`}
+            className={`px-6 py-2 rounded-md text-lg font-semibold transition-all focus:outline-none 
+            ${!isSignUp 
+              ? 'bg-[#1D4ED8] text-white shadow-md'  // active sign in state
+              : 'text-gray-600 border border-[#205AFA] hover:bg-[#E5EDFF] hover:text-[#205AFA]'} // inactive sign in
+            `}
             onClick={() => setIsSignUp(false)}>
             Sign In
           </button>
+          
           <button 
-            className={`px-6 py-2 rounded-md text-lg font-semibold transition-colors focus:outline-none ${isSignUp ? 'bg-[#205AFA] text-white hover:bg-[#205AFA]' : 'text-gray-500 hover:text-[#205AFA]'}`}
+            className={`px-6 py-2 rounded-md text-lg font-semibold transition-all focus:outline-none 
+            ${isSignUp 
+              ? 'bg-[#1D4ED8] text-white shadow-md'  // active sign up
+              : 'text-gray-600 border border-[#205AFA] hover:bg-[#E5EDFF] hover:text-[#205AFA]'} // inactive sign up
+            `}
             onClick={() => setIsSignUp(true)}>
             Sign Up
           </button>

@@ -49,7 +49,7 @@ function Home() {
             <h2 className="mt-4 text-3xl">Ready for expert advice?</h2>
             <p className="mt-2">Start your AI consultation today.</p>
             <button onClick={handleCTAButton}
-                    className="btn-primary flex items-center space-x-2 mt-6 text-2xl font-semibold px-6 py-3 rounded-full transition-colors duration-200 ease-in-out">
+                    className="btn-primary cursor-pointer flex items-center space-x-2 mt-6 text-2xl font-semibold px-6 py-3 rounded-full transition-all duration-200 ease-in-out hover:scale-105">
                 <span>Get Started</span>
                 <ChevronDoubleRightIcon className="w-6 h-6" />
             </button>
