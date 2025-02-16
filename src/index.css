@@ -11,10 +11,22 @@ html, body {
   min-height: 100vh;
 }
 
+.custom-gradient-light {
+  background: linear-gradient(to bottom, #D9D9D9 0%, #A6A6A6 96%, #8C8C8C 100%);
+}
+
 .btn-primary {
   background-color: #205AFA;
   }
   
 .btn-primary:hover {
     background-color: #1D4ED8;
+}
+
+.react-datepicker-wrapper {
+  width: 100% !important;
+}
+
+.react-datepicker__input-container input {
+  width: 100% !important;
 }

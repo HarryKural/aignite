@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { UserIcon, EnvelopeIcon, LockClosedIcon } from "@heroicons/react/24/solid";
 
-export default function Login() {
+function Login() {
   const [isSignUp, setIsSignUp] = useState(false);
 
   return (
+    <>
+    <title>AIgnite - Sign in</title>
     <section className="flex items-center justify-center px-6 mt-15">
       <div className="bg-white shadow-lg rounded-xl p-8 md:p-12 w-full max-w-lg">
         {/* Toggle Buttons */}
@@ -86,5 +88,8 @@ export default function Login() {
         </form>
       </div>
     </section>
+    </>
   );
 }
+
+export default Login;
