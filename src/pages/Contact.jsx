@@ -1,6 +1,15 @@
-import { UserIcon, EnvelopeIcon, ChatBubbleBottomCenterIcon, PaperAirplaneIcon } from '@heroicons/react/24/solid'
+import { useState } from 'react';
+import { UserIcon, EnvelopeIcon, PaperAirplaneIcon } from '@heroicons/react/24/solid'
 
 function Contact() {
+  // state to track if map is loaded
+  const [mapLoaded, setMapLoaded] = useState(false);
+
+  // function to handle (smooth) map load
+  const handleMapLoad = () => {
+    setMapLoaded(true);
+  };
+
     return (
       <>
         <title>AIgnite - Contact</title>
@@ -47,10 +56,17 @@ function Contact() {
 
         {/* right side - text */}
         <div className="md:w-1/2 flex flex-col items-left text-left mt-6 md:mt-0">
-          <div className="w-full h-full">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d11201.472623315181!2d-75.688015928064!3d45.42207948137245!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDXCsDI1JzIwLjkiTiA3NcKwNDAnNDcuOSJX!5e0!3m2!1sen!2sca!4v1739413831033!5m2!1sen!2sca"
-                    width="550" height="400" style={{ border:0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                    className='rounded-lg'></iframe>
+          <div className="relative w-full h-full">
+          {/* show skeleton loader while map is loading */}
+          {!mapLoaded && (
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 animate-pulse rounded-lg w-[550px] h-[400px] transition-all duration-800 ease-out opacity-100" />
+          )}
+
+          {/* show map when loaded */}
+          <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d11201.472623315181!2d-75.688015928064!3d45.42207948137245!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDXCsDI1JzIwLjkiTiA3NcKwNDAnNDcuOSJX!5e0!3m2!1sen!2sca!4v1739413831033!5m2!1sen!2sca"
+                  width="550" height="400" style={{ border:0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                  rel="preload" className={`rounded-lg transition-all duration-800 ease-out ${mapLoaded ? 'opacity-100' : 'opacity-0'}`} onLoad={handleMapLoad}>
+          </iframe>
           </div>
           <div className="mt-6">
             <p className="mt-2 text-xl"><span className='font-semibold'>Address:</span> 452 Flied Street, Ottawa, ON L2F9DI</p>
