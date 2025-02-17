@@ -91,7 +91,7 @@ function Login() {
             </div>
           )}
 
-          <button className="w-full btn-primary text-white font-semibold py-3 rounded-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]">
+          <button className="w-full btn-primary cursor-pointer text-white font-semibold py-3 rounded-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]">
             {isSignUp ? "Sign Up" : "Sign In"}
           </button>
         </form>

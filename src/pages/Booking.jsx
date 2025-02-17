@@ -123,12 +123,12 @@ function Booking() {
             {/* buttons */}
             <div className="flex gap-4">
               <div className="relative w-1/2">
-                <button className="btn-primary w-full text-white text-lg font-semibold py-3 rounded-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]" type="submit">
+                <button className="btn-primary cursor-pointer w-full text-white text-lg font-semibold py-3 rounded-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]" type="submit">
                   Book Now
                 </button>
               </div>
               <div className="relative w-1/2">
-                <button className="w-full bg-[#DC2626] text-white text-lg font-semibold py-3 rounded-lg hover:bg-[#A70000] transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#A70000]"
+                <button className="w-full bg-[#DC2626] cursor-pointer text-white text-lg font-semibold py-3 rounded-lg hover:bg-[#A70000] transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#A70000]"
                         onClick={handleReset}>
                   Reset
                 </button>
@@ -165,7 +165,7 @@ function Booking() {
             <p className="mt-4 text-gray-600 text-md">An email has been sent to <span className="font-bold">{email}</span> with your booking details.</p>
             
             <button onClick={closeModal} 
-                    className="btn-primary text-lg font-semibold mt-6 w-full text-white py-3 rounded-lg hover:bg-[#1D4ED8] transition duration-300">
+                    className="btn-primary cursor-pointer text-lg font-semibold mt-6 w-full text-white py-3 rounded-lg hover:bg-[#1D4ED8] transition duration-300">
               Close
             </button>
           </div>

@@ -50,7 +50,7 @@ function Contact() {
               </div>
             </div>
             {/* submit button */}
-            <button className="btn-primary flex items-center space-x-2 mt-6 text-lg font-semibold px-6 py-3 rounded-full transition-colors duration-200 ease-in-out" type="submit">
+            <button className="btn-primary cursor-pointer flex items-center space-x-2 mt-6 text-lg font-semibold px-6 py-3 rounded-full transition-colors duration-200 ease-in-out" type="submit">
                 <span>Submit</span>
                 <PaperAirplaneIcon className="w-5 h-5" />
             </button>
