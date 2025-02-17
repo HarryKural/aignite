@@ -51,12 +51,18 @@ function Booking() {
                 value={selectedService}
                 onChange={(e) => setSelectedService(e.target.value)} required>
                 <option value="" disabled>Select a service</option>
-                <option value="Health">Health</option>
-                <option value="Technology">Technology</option>
-                <option value="Skincare">Skincare</option>
-                <option value="Finance">Finance</option>
-                <option value="Legal">Legal</option>
+                <option value="Business">Business</option>\
                 <option value="Education">Education</option>
+                <option value="Finance">Finance</option>
+                <option value="Fitness & Nutrition">Fitness & Nutrition</option>
+                <option value="Health">Health</option>
+                <option value="Legal">Legal</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Mental Health">Mental Health</option>
+                <option value="Personal Development">Personal Development</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Skincare">Skincare</option>
+                <option value="Technology">Technology</option>
               </select>
             </div>
 
