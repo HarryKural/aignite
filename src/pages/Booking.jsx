@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { CalendarIcon, ClockIcon, EnvelopeIcon } from "@heroicons/react/24/solid";
+import { CalendarIcon, ClockIcon, EnvelopeIcon, CheckCircleIcon } from "@heroicons/react/24/solid";
 
 function Booking() {
     /* state variables */
@@ -10,6 +10,15 @@ function Booking() {
     const [startTime, setStartTime] = useState(null);
     const [endTime, setEndTime] = useState(null);
     const [email, setEmail] = useState("");
+
+    /* modal state */
+    const [showModal, setShowModal] = useState(false);
+
+    /* function to handle form submission */
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      setShowModal(true);
+    };
 
     /* function to reset form */
     const handleReset = () => {
@@ -20,6 +29,12 @@ function Booking() {
       setEmail("");
     };
 
+    /* function to close modal */
+    const closeModal = () => {
+      setShowModal(false);
+      handleReset(); // reset form after closing modal
+    };
+
     return (
       <section className="flex items-center justify-center px-6 mt-15">
         <div className="bg-white shadow-lg rounded-xl p-8 md:p-12 w-full max-w-lg">
@@ -27,7 +42,7 @@ function Booking() {
           <p className="text-gray-600 text-center mt-2">Schedule your appointment today</p>
 
           {/* Form */}
-          <form className="mt-6 space-y-4">
+          <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
 
             {/* service selection */}
             <div className="relative">
@@ -102,7 +117,7 @@ function Booking() {
             {/* buttons */}
             <div className="flex gap-4">
               <div className="relative w-1/2">
-                <button className="w-full bg-[#205AFA] text-white text-lg font-semibold py-3 rounded-lg hover:bg-[#1D4ED8] transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]">
+                <button className="btn-primary w-full text-white text-lg font-semibold py-3 rounded-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#1D4ED8]" type="submit">
                   Book Now
                 </button>
               </div>
@@ -120,6 +135,37 @@ function Booking() {
 
           </form>
         </div>
+
+        {/* confirmation modal */}
+        {showModal && (
+        <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+
+          <div className="flex justify-center mb-6">
+            <div className="bg-green-100 rounded-full p-3">
+              <CheckCircleIcon className="h-8 w-8 text-green-500" />
+            </div>
+          </div>
+
+            <h3 className="text-3xl text-center font-bold text-gray-800">Booking Confirmed!</h3>
+            <p className="text-lg mt-4 text-gray-600">Here are your booking details:</p>
+            <ul className="mt-2 space-y-2">
+              <li className="text-lg"><strong>Service:</strong> {selectedService}</li>
+              <li className="text-lg"><strong>Date:</strong> {bookingDate ? bookingDate.toLocaleDateString() : ""}</li>
+              <li className="text-lg"><strong>Start Time:</strong> {startTime ? startTime.toLocaleTimeString() : ""}</li>
+              <li className="text-lg"><strong>End Time:</strong> {endTime ? endTime.toLocaleTimeString() : ""}</li>
+              <li className="text-lg"><strong>Email:</strong> {email}</li>
+            </ul>
+            <p className="mt-4 text-gray-600 text-md">An email has been sent to <span className="font-bold">{email}</span> with your booking details.</p>
+            
+            <button onClick={closeModal} 
+                    className="btn-primary text-lg font-semibold mt-6 w-full text-white py-3 rounded-lg hover:bg-[#1D4ED8] transition duration-300">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
       </section>
     );
 }
